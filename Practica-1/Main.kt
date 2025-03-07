@@ -1,10 +1,3 @@
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.time.format.DateTimeParseException
-import java.time.temporal.ChronoUnit
-import java.util.InputMismatchException
-import java.util.Scanner
-
 fun main() {
 
     var seleccion:Int // Opción del menú
@@ -73,7 +66,6 @@ fun calcularTiempoDesdeNacimiento() {
         Ingresa tu fecha de nacimiento con el formato Día-Mes-Año
     """.trimIndent())
 
-    try {
         val fechaIngresada: String = entrada.next()
         val fechaNacimiento = LocalDateTime.parse("$fechaIngresada 00:00:00", formato)
 
@@ -95,8 +87,4 @@ fun calcularTiempoDesdeNacimiento() {
         $segundos segundos
             """.trimIndent()
         )
-    } catch (e: DateTimeParseException) {
-        println("Formato incorrecto. Inténtalo de nuevo.")
-        calcularTiempoDesdeNacimiento()
-    }
 }
